@@ -2,14 +2,12 @@ package com.special.robinhood.ui.injection.module
 
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
-import com.special.robinhood.ui.browse.BrowseActivity
-import com.special.robinhood.ui.injection.scopes.PerActivity
+import com.special.robinhood.ui.onboard.MainActivity
 
 @Module
 abstract class ActivityBuilder {
 
-    @PerActivity
-    @ContributesAndroidInjector(modules = [BrowseActivityModule::class])
-    abstract fun bindMainActivity(): BrowseActivity
+    @ContributesAndroidInjector
+    abstract fun bindMainActivity(): MainActivity
 
 }

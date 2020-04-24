@@ -7,16 +7,24 @@ import dagger.android.support.AndroidSupportInjectionModule
 import com.special.robinhood.ui.AndroidApplication
 import com.special.robinhood.ui.injection.module.ActivityBuilder
 import com.special.robinhood.ui.injection.module.ApplicationModule
+import com.special.robinhood.ui.injection.module.FragmentBuilder
+import javax.inject.Singleton
 
-@Component(modules = [ActivityBuilder::class,
+@Component(modules = [
+    ActivityBuilder::class,
+    FragmentBuilder::class,
     ApplicationModule::class,
-    AndroidSupportInjectionModule::class])
+    AndroidSupportInjectionModule::class
+])
 
+@Singleton
 interface ApplicationComponent {
 
     @Component.Builder
     interface Builder {
-        @BindsInstance fun application(application: Application): Builder
+        @BindsInstance
+        fun application(application: Application): Builder
+
         fun build(): ApplicationComponent
     }
 

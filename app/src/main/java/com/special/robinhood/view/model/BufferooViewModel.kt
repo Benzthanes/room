@@ -1,4 +1,4 @@
-package com.special.robinhood.ui.model
+package com.special.robinhood.view.model
 
 /**
  * Representation for a [BufferooViewModel] fetched from an external layer data source

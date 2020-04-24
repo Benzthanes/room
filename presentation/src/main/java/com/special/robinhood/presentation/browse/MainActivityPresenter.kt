@@ -5,8 +5,7 @@ import com.special.robinhood.presentation.BasePresenter
 import io.reactivex.observers.DisposableSingleObserver
 import javax.inject.Inject
 
-class MainActivityPresenter @Inject constructor() :
-        BasePresenter<MainActivityContract.View>() {
+class MainActivityPresenter @Inject constructor() : BasePresenter<MainActivityContract.View>() {
 
     inner class BufferooSubscriber : DisposableSingleObserver<List<Bufferoo>>() {
 

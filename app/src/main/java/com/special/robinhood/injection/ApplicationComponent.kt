@@ -1,12 +1,13 @@
-package com.special.robinhood.ui.injection
+package com.special.robinhood.injection
 
 import android.app.Application
+import com.special.robinhood.AndroidApplication
 import dagger.BindsInstance
 import dagger.Component
 import dagger.android.support.AndroidSupportInjectionModule
-import com.special.robinhood.ui.injection.module.ActivityBuilder
-import com.special.robinhood.ui.injection.module.ApplicationModule
-import com.special.robinhood.ui.injection.module.FragmentBuilder
+import com.special.robinhood.injection.module.ActivityBuilder
+import com.special.robinhood.injection.module.ApplicationModule
+import com.special.robinhood.injection.module.FragmentBuilder
 import javax.inject.Singleton
 
 @Component(modules = [

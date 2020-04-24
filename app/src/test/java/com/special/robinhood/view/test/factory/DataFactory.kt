@@ -1,4 +1,4 @@
-package com.special.robinhood.ui.test.factory
+package com.special.robinhood.view.test.factory
 
 import java.util.concurrent.ThreadLocalRandom
 

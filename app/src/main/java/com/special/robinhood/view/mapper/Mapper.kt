@@ -1,4 +1,4 @@
-package com.special.robinhood.ui.mapper
+package com.special.robinhood.view.mapper
 
 /**
  * Interface for model mappers. It provides helper methods that facilitate

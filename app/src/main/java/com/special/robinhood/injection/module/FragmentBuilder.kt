@@ -1,6 +1,6 @@
-package com.special.robinhood.ui.injection.module
+package com.special.robinhood.injection.module
 
-import com.special.robinhood.ui.fragment.landing.BlankFragment
+import com.special.robinhood.view.fragment.landing.BlankFragment
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 

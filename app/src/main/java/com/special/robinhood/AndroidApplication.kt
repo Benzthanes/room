@@ -1,10 +1,10 @@
-package com.special.robinhood.ui.injection
+package com.special.robinhood
 
 import android.app.Activity
 import android.app.Application
 import android.app.Service
 import androidx.fragment.app.Fragment
-import com.special.robinhood.ui.BuildConfig
+import com.special.robinhood.injection.DaggerApplicationComponent
 import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.HasActivityInjector
@@ -13,8 +13,7 @@ import dagger.android.support.HasSupportFragmentInjector
 import timber.log.Timber
 import javax.inject.Inject
 
-class AndroidApplication : Application(), HasActivityInjector, HasSupportFragmentInjector,
-        HasServiceInjector {
+class AndroidApplication : Application(), HasActivityInjector, HasSupportFragmentInjector, HasServiceInjector {
 
     @Inject
     lateinit var activityDispatchingAndroidInjector: DispatchingAndroidInjector<Activity>
@@ -25,8 +24,7 @@ class AndroidApplication : Application(), HasActivityInjector, HasSupportFragmen
 
     override fun onCreate() {
         super.onCreate()
-        DaggerApplicationComponent
-                .builder()
+        DaggerApplicationComponent.builder()
                 .application(this)
                 .build()
                 .inject(this)

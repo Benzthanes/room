@@ -1,20 +1,13 @@
-package com.special.robinhood.ui.fragment.landing
+package com.special.robinhood.view.fragment.landing
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.special.robinhood.presentation.browse.MainActivityContract
-import com.special.robinhood.presentation.browse.MainActivityPresenter
+import com.special.robinhood.R
+import dagger.android.support.DaggerFragment
 
-import com.special.robinhood.ui.R
-import javax.inject.Inject
-
-class BlankFragment : Fragment() , MainActivityContract.View {
-
-    @Inject
-    lateinit var onboardingPresenter: MainActivityPresenter
+class BlankFragment : DaggerFragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

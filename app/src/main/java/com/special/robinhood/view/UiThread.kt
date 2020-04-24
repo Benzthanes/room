@@ -1,4 +1,4 @@
-package com.special.robinhood.ui
+package com.special.robinhood.view
 
 import io.reactivex.Scheduler
 import io.reactivex.android.schedulers.AndroidSchedulers

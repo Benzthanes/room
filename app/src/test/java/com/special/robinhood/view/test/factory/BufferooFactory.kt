@@ -1,7 +1,7 @@
-package com.special.robinhood.ui.test.factory
+package com.special.robinhood.view.test.factory
 
 import com.special.robinhood.presentation.model.BufferooView
-import com.special.robinhood.ui.test.factory.DataFactory.Factory.randomUuid
+import com.special.robinhood.view.test.factory.DataFactory.Factory.randomUuid
 
 /**
  * Factory class for Bufferoo related instances

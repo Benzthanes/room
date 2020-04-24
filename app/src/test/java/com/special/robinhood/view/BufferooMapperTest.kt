@@ -1,7 +1,7 @@
-package com.special.robinhood.ui
+package com.special.robinhood.view
 
-import com.special.robinhood.ui.mapper.BufferooMapper
-import com.special.robinhood.ui.test.factory.BufferooFactory
+import com.special.robinhood.view.mapper.BufferooMapper
+import com.special.robinhood.view.test.factory.BufferooFactory
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith

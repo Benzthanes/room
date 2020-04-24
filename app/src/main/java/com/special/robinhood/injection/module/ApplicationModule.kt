@@ -1,7 +1,8 @@
-package com.special.robinhood.ui.injection.module
+package com.special.robinhood.injection.module
 
 import android.app.Application
 import android.content.Context
+import com.special.robinhood.BuildConfig
 import dagger.Module
 import dagger.Provides
 import com.special.robinhood.cache.BufferooCacheImpl
@@ -20,8 +21,7 @@ import com.special.robinhood.domain.repository.BufferooRepository
 import com.special.robinhood.remote.BufferooRemoteImpl
 import com.special.robinhood.remote.BufferooService
 import com.special.robinhood.remote.BufferooServiceFactory
-import com.special.robinhood.ui.BuildConfig
-import com.special.robinhood.ui.UiThread
+import com.special.robinhood.view.UiThread
 
 /**
  * Module used to provide dependencies at an application-level.

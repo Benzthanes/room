@@ -1,7 +1,7 @@
-package com.special.robinhood.ui.mapper
+package com.special.robinhood.view.mapper
 
 import com.special.robinhood.presentation.model.BufferooView
-import com.special.robinhood.ui.model.BufferooViewModel
+import com.special.robinhood.view.model.BufferooViewModel
 import javax.inject.Inject
 
 /**

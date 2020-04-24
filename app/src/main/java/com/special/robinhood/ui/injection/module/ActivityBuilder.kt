@@ -6,7 +6,7 @@ import com.special.robinhood.ui.browse.BrowseActivity
 import com.special.robinhood.ui.injection.scopes.PerActivity
 
 @Module
-abstract class ActivityBindingModule {
+abstract class ActivityBuilder {
 
     @PerActivity
     @ContributesAndroidInjector(modules = arrayOf(BrowseActivityModule::class))

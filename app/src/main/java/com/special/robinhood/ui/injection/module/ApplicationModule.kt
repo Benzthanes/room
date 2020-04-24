@@ -22,7 +22,6 @@ import com.special.robinhood.remote.BufferooService
 import com.special.robinhood.remote.BufferooServiceFactory
 import com.special.robinhood.ui.BuildConfig
 import com.special.robinhood.ui.UiThread
-import com.special.robinhood.ui.injection.scopes.PerApplication
 
 /**
  * Module used to provide dependencies at an application-level.
@@ -31,27 +30,23 @@ import com.special.robinhood.ui.injection.scopes.PerApplication
 open class ApplicationModule {
 
     @Provides
-    @PerApplication
     fun provideContext(application: Application): Context {
         return application
     }
 
     @Provides
-    @PerApplication
     internal fun providePreferencesHelper(context: Context): PreferencesHelper {
         return PreferencesHelper(context)
     }
 
 
     @Provides
-    @PerApplication
     internal fun provideBufferooRepository(factory: BufferooDataStoreFactory,
                                            mapper: BufferooMapper): BufferooRepository {
         return BufferooDataRepository(factory, mapper)
     }
 
     @Provides
-    @PerApplication
     internal fun provideBufferooCache(factory: DbOpenHelper,
                                       entityMapper: BufferooEntityMapper,
                                       mapper: com.special.robinhood.cache.db.mapper.BufferooMapper,
@@ -60,26 +55,22 @@ open class ApplicationModule {
     }
 
     @Provides
-    @PerApplication
     internal fun provideBufferooRemote(service: BufferooService,
                                        factory: com.special.robinhood.remote.mapper.BufferooEntityMapper): BufferooRemote {
         return BufferooRemoteImpl(service, factory)
     }
 
     @Provides
-    @PerApplication
     internal fun provideThreadExecutor(jobExecutor: JobExecutor): ThreadExecutor {
         return jobExecutor
     }
 
     @Provides
-    @PerApplication
     internal fun providePostExecutionThread(uiThread: UiThread): PostExecutionThread {
         return uiThread
     }
 
     @Provides
-    @PerApplication
     internal fun provideBufferooService(): BufferooService {
         return BufferooServiceFactory.makeBuffeoorService(BuildConfig.DEBUG)
     }

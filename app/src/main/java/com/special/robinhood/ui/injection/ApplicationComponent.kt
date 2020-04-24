@@ -4,13 +4,11 @@ import android.app.Application
 import dagger.BindsInstance
 import dagger.Component
 import dagger.android.support.AndroidSupportInjectionModule
-import com.special.robinhood.ui.BufferooApplication
-import com.special.robinhood.ui.injection.module.ActivityBindingModule
+import com.special.robinhood.ui.AndroidApplication
+import com.special.robinhood.ui.injection.module.ActivityBuilder
 import com.special.robinhood.ui.injection.module.ApplicationModule
-import com.special.robinhood.ui.injection.scopes.PerApplication
 
-@PerApplication
-@Component(modules = arrayOf(ActivityBindingModule::class, ApplicationModule::class,
+@Component(modules = arrayOf(ActivityBuilder::class, ApplicationModule::class,
         AndroidSupportInjectionModule::class))
 interface ApplicationComponent {
 
@@ -20,6 +18,6 @@ interface ApplicationComponent {
         fun build(): ApplicationComponent
     }
 
-    fun inject(app: BufferooApplication)
+    fun inject(app: AndroidApplication)
 
 }

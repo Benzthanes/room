@@ -9,7 +9,7 @@ import com.special.robinhood.ui.injection.scopes.PerActivity
 abstract class ActivityBuilder {
 
     @PerActivity
-    @ContributesAndroidInjector(modules = arrayOf(BrowseActivityModule::class))
+    @ContributesAndroidInjector(modules = [BrowseActivityModule::class])
     abstract fun bindMainActivity(): BrowseActivity
 
 }

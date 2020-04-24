@@ -8,8 +8,10 @@ import com.special.robinhood.ui.AndroidApplication
 import com.special.robinhood.ui.injection.module.ActivityBuilder
 import com.special.robinhood.ui.injection.module.ApplicationModule
 
-@Component(modules = arrayOf(ActivityBuilder::class, ApplicationModule::class,
-        AndroidSupportInjectionModule::class))
+@Component(modules = [ActivityBuilder::class,
+    ApplicationModule::class,
+    AndroidSupportInjectionModule::class])
+
 interface ApplicationComponent {
 
     @Component.Builder

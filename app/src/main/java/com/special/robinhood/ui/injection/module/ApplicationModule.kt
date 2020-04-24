@@ -39,7 +39,6 @@ open class ApplicationModule {
         return PreferencesHelper(context)
     }
 
-
     @Provides
     internal fun provideBufferooRepository(factory: BufferooDataStoreFactory,
                                            mapper: BufferooMapper): BufferooRepository {

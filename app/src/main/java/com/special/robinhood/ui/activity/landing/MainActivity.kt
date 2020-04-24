@@ -1,4 +1,4 @@
-package com.special.robinhood.ui.onboard
+package com.special.robinhood.ui.activity.landing
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

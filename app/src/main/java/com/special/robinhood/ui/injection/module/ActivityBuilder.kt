@@ -2,7 +2,7 @@ package com.special.robinhood.ui.injection.module
 
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
-import com.special.robinhood.ui.onboard.MainActivity
+import com.special.robinhood.ui.activity.landing.MainActivity
 
 @Module
 abstract class ActivityBuilder {

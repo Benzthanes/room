@@ -4,7 +4,6 @@ import android.app.Application
 import dagger.BindsInstance
 import dagger.Component
 import dagger.android.support.AndroidSupportInjectionModule
-import com.special.robinhood.ui.AndroidApplication
 import com.special.robinhood.ui.injection.module.ActivityBuilder
 import com.special.robinhood.ui.injection.module.ApplicationModule
 import com.special.robinhood.ui.injection.module.FragmentBuilder

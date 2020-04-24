@@ -1,10 +1,10 @@
-package com.special.robinhood.ui
+package com.special.robinhood.ui.injection
 
 import android.app.Activity
 import android.app.Application
 import android.app.Service
 import androidx.fragment.app.Fragment
-import com.special.robinhood.ui.injection.DaggerApplicationComponent
+import com.special.robinhood.ui.BuildConfig
 import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.HasActivityInjector

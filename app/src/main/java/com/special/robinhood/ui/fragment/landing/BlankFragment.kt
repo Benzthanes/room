@@ -1,4 +1,4 @@
-package com.special.robinhood.ui.onboard
+package com.special.robinhood.ui.fragment.landing
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

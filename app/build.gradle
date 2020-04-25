@@ -64,10 +64,10 @@ dependencies {
     def mobileUiDependencies = rootProject.ext.mobileUiDependencies
     def mobileUiTestDependencies = rootProject.ext.mobileUiTestDependencies
 
-    implementation project(':presentation')
-    implementation project(':data')
-    implementation project(':cache')
-    implementation project(':remote')
+    implementation project(path: ':presentation')
+    implementation project(path: ':domain')
+    implementation project(path: ':data')
+    implementation project(path: ':cache')
 
     implementation mobileUiDependencies.javaxAnnotation
 

@@ -3,15 +3,15 @@ package com.special.robinhood.view.activity.landing
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.special.robinhood.R
-import com.special.robinhood.presentation.browse.MainActivityContract
-import com.special.robinhood.presentation.browse.MainActivityPresenter
+import com.special.robinhood.presentation.view.landing.MainView
+import com.special.robinhood.presentation.presenter.landing.MainPresenter
 import dagger.android.AndroidInjection
 import javax.inject.Inject
 
-class MainActivity : AppCompatActivity(), MainActivityContract.View {
+class MainActivity : AppCompatActivity(), MainView {
 
     @Inject
-    lateinit var presenter: MainActivityPresenter
+    lateinit var presenter: MainPresenter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

@@ -2,7 +2,6 @@ package com.special.robinhood.di.module
 
 import android.app.Application
 import android.content.Context
-import com.special.robinhood.BuildConfig
 import dagger.Module
 import dagger.Provides
 import com.special.robinhood.cache.BufferooCacheImpl
@@ -13,14 +12,10 @@ import com.special.robinhood.data.BufferooDataRepository
 import com.special.robinhood.data.executor.JobExecutor
 import com.special.robinhood.data.mapper.BufferooMapper
 import com.special.robinhood.data.repository.BufferooCache
-import com.special.robinhood.data.repository.BufferooRemote
 import com.special.robinhood.data.source.BufferooDataStoreFactory
 import com.special.robinhood.domain.executor.PostExecutionThread
 import com.special.robinhood.domain.executor.ThreadExecutor
 import com.special.robinhood.domain.repository.BufferooRepository
-import com.special.robinhood.remote.BufferooRemoteImpl
-import com.special.robinhood.remote.BufferooService
-import com.special.robinhood.remote.BufferooServiceFactory
 import com.special.robinhood.view.UiThread
 
 /**
@@ -54,12 +49,6 @@ open class ApplicationModule {
     }
 
     @Provides
-    internal fun provideBufferooRemote(service: BufferooService,
-                                       factory: com.special.robinhood.remote.mapper.BufferooEntityMapper): BufferooRemote {
-        return BufferooRemoteImpl(service, factory)
-    }
-
-    @Provides
     internal fun provideThreadExecutor(jobExecutor: JobExecutor): ThreadExecutor {
         return jobExecutor
     }
@@ -67,10 +56,5 @@ open class ApplicationModule {
     @Provides
     internal fun providePostExecutionThread(uiThread: UiThread): PostExecutionThread {
         return uiThread
-    }
-
-    @Provides
-    internal fun provideBufferooService(): BufferooService {
-        return BufferooServiceFactory.makeBuffeoorService(BuildConfig.DEBUG)
     }
 }

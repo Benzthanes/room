@@ -46,6 +46,8 @@ ext {
             kotlin         : "org.jetbrains.kotlin:kotlin-stdlib-jre8:${kotlinVersion}",
             rxJava2        : "io.reactivex.rxjava2:rxjava:${rxJava2Version}",
             rxJava2Android : "io.reactivex.rxjava2:rxandroid:${rxJava2AndroidVersion}",
+            daggerCompiler : "com.google.dagger:dagger-compiler:${daggerVersion}",
+            dagger         : "com.google.dagger:dagger:${daggerVersion}",
     ]
 
     domainTestDependencies = [
@@ -54,7 +56,6 @@ ext {
             assertj       : "org.assertj:assertj-core:${assertJVersion}",
             rxJava2       : "io.reactivex.rxjava2:rxjava:${rxJava2Version}",
             rxJava2Android: "io.reactivex.rxjava2:rxandroid:${rxJava2AndroidVersion}",
-
     ]
 
     presentationDependencies = [
@@ -74,7 +75,6 @@ ext {
             retrofitAdapter   : "com.squareup.retrofit2:adapter-rxjava2:${retrofitVersion}",
             rxJava2           : "io.reactivex.rxjava2:rxjava:${rxJava2Version}",
             rxJava2Android    : "io.reactivex.rxjava2:rxandroid:${rxJava2AndroidVersion}",
-
     ]
 
     presentationTestDependencies = [
@@ -85,7 +85,6 @@ ext {
             robolectric   : "org.robolectric:robolectric:${robolectricVersion}",
             rxJava2       : "io.reactivex.rxjava2:rxjava:${rxJava2Version}",
             rxJava2Android: "io.reactivex.rxjava2:rxandroid:${rxJava2AndroidVersion}",
-
     ]
 
     dataDependencies = [
@@ -145,7 +144,6 @@ ext {
             supportRules  : "com.android.support.test:rules:${androidSupportRulesVersion}",
             rxJava2       : "io.reactivex.rxjava2:rxjava:${rxJava2Version}",
             rxJava2Android: "io.reactivex.rxjava2:rxandroid:${rxJava2AndroidVersion}",
-
     ]
 
     remoteDependencies = [
@@ -216,5 +214,4 @@ ext {
             rxJava2        : "io.reactivex.rxjava2:rxjava:${rxJava2Version}",
             rxJava2Android : "io.reactivex.rxjava2:rxandroid:${rxJava2AndroidVersion}",
     ]
-
 }

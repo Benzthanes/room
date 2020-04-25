@@ -1,4 +1,4 @@
-package com.special.robinhood.injection.module
+package com.special.robinhood.di.module
 
 import android.app.Application
 import android.content.Context

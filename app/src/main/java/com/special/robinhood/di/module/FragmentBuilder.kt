@@ -1,4 +1,4 @@
-package com.special.robinhood.injection.module
+package com.special.robinhood.di.module
 
 import com.special.robinhood.view.fragment.landing.BlankFragment
 import dagger.Module

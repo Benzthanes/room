@@ -5,9 +5,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.special.robinhood.R
-import dagger.android.support.DaggerFragment
+import com.special.robinhood.view.fragment.BaseFragment
 
-class BlankFragment : DaggerFragment() {
+class BlankFragment : BaseFragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

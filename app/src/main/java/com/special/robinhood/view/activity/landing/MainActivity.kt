@@ -5,6 +5,7 @@ import com.special.robinhood.R
 import com.special.robinhood.presentation.presenter.landing.MainPresenter
 import com.special.robinhood.presentation.view.landing.MainContractor
 import com.special.robinhood.view.activity.BaseActivity
+import kotlinx.android.synthetic.main.activity_main.textTitle
 import javax.inject.Inject
 
 class MainActivity : BaseActivity(), MainContractor.View {
@@ -20,6 +21,7 @@ class MainActivity : BaseActivity(), MainContractor.View {
     }
 
     override fun displayText(text: String) {
+        textTitle.text = text
     }
 
 }

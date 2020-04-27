@@ -86,6 +86,18 @@ dependencies {
     implementation appDependencies.dagger
     implementation appDependencies.daggerSupport
     implementation appDependencies.localization
+    implementation appDependencies.constraintLayout
+
+    //Http
+    implementation dataDependencies.okHttp
+    implementation dataDependencies.okHttpLogger
+    implementation dataDependencies.gson
+
+    //Retrofit2
+    implementation dataDependencies.retrofit
+    implementation dataDependencies.retrofitConverter
+    implementation dataDependencies.retrofitAdapter
+
     implementation(appDependencies.deepLink) {
         exclude group: 'com.google.code.findbugs'
     }
@@ -125,5 +137,4 @@ dependencies {
 
     kaptTest appDependencies.daggerCompiler
     kaptAndroidTest appDependencies.daggerCompiler
-    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
 }

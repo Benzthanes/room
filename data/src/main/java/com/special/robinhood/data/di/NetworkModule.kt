@@ -5,6 +5,7 @@ import com.google.gson.GsonBuilder
 import dagger.Module
 import dagger.Provides
 import okhttp3.OkHttpClient
+import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
@@ -24,12 +25,21 @@ class NetworkModule {
 
     @Provides
     @Singleton
-    fun provideOkHttpClient(): OkHttpClient {
+    fun provideHttpLoggingInterceptor(): HttpLoggingInterceptor {
+        return HttpLoggingInterceptor().apply {
+            level = HttpLoggingInterceptor.Level.BODY
+        }
+    }
+
+    @Provides
+    @Singleton
+    fun provideOkHttpClient(logging: HttpLoggingInterceptor): OkHttpClient {
         return OkHttpClient.Builder()
                 .writeTimeout(TIMEOUT.toLong(), TimeUnit.SECONDS)
                 .readTimeout(TIMEOUT.toLong(), TimeUnit.SECONDS)
                 .connectTimeout(TIMEOUT.toLong(), TimeUnit.SECONDS)
                 .addInterceptor { it.proceed(it.request()) }
+                .addInterceptor(logging)
                 .build()
     }
 

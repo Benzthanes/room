@@ -1,4 +1,4 @@
-package com.special.robinhood.data.network.service
+package com.special.robinhood.data.network.service.landing
 
 import com.special.robinhood.data.model.MobileEntity
 import io.reactivex.Single

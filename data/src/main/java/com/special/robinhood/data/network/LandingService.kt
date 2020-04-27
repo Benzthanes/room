@@ -4,7 +4,7 @@ import com.special.robinhood.data.model.MobileEntity
 import io.reactivex.Single
 import retrofit2.http.GET
 
-interface LandingApi {
+interface LandingService {
     @GET("api/mobiles/")
     fun getPhones(): Single<List<MobileEntity>>
 

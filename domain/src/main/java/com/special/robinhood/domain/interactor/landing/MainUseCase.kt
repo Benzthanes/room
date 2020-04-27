@@ -1,12 +1,11 @@
 package com.special.robinhood.domain.interactor.landing
 
-
 import com.special.robinhood.domain.executor.ThreadExecutor
 import com.special.robinhood.domain.interactor.BaseSingleUseCase
 import com.special.robinhood.domain.interactor.BaseUseCase
 import com.special.robinhood.domain.interactor.ThreadExecutors
-import com.special.robinhood.domain.model.Mobile
-import com.special.robinhood.domain.repository.LandingRepositoryContractor
+import com.special.robinhood.domain.model.landing.Mobile
+import com.special.robinhood.domain.repository.landing.LandingRepositoryContractor
 import javax.inject.Inject
 import javax.inject.Named
 

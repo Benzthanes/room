@@ -2,7 +2,7 @@ package com.special.robinhood.presentation.controller.landing
 
 import com.special.robinhood.domain.interactor.BaseUseCase
 import com.special.robinhood.domain.interactor.landing.MainUseCase
-import com.special.robinhood.domain.model.Mobile
+import com.special.robinhood.domain.model.landing.Mobile
 import com.special.robinhood.presentation.BaseController
 import io.reactivex.disposables.CompositeDisposable
 import javax.inject.Inject

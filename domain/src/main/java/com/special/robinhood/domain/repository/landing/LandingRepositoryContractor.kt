@@ -1,6 +1,6 @@
-package com.special.robinhood.domain.repository
+package com.special.robinhood.domain.repository.landing
 
-import com.special.robinhood.domain.model.Mobile
+import com.special.robinhood.domain.model.landing.Mobile
 import io.reactivex.Single
 
 /**

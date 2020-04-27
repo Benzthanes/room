@@ -88,7 +88,7 @@ dependencies {
     implementation appDependencies.localization
     implementation appDependencies.constraintLayout
 
-    // http
+    //Http
     implementation dataDependencies.okHttp
     implementation dataDependencies.okHttpLogger
     implementation dataDependencies.gson

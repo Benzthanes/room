@@ -14,23 +14,9 @@ class AndroidModule {
 
     @Provides
     @Singleton
-    @Named(ThreadExecutors.SUBSCRIBER_ON)
-    internal fun provideSubscriberOnThreadExecutor(): ThreadExecutor {
-        return ThreadExecutor(Schedulers.newThread())
-    }
-
-    @Provides
-    @Singleton
     @Named(ThreadExecutors.SUBSCRIBER_ON_IO)
     internal fun provideSubscriberOnIOThreadExecutor(): ThreadExecutor {
         return ThreadExecutor(Schedulers.io())
-    }
-
-    @Provides
-    @Singleton
-    @Named(ThreadExecutors.SUBSCRIBER_ON_COMPUTATION)
-    internal fun provideSubscriberOnComputationThreadExecutor(): ThreadExecutor {
-        return ThreadExecutor(Schedulers.computation())
     }
 
     @Provides

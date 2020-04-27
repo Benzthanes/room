@@ -98,6 +98,11 @@ dependencies {
     implementation dataDependencies.retrofitConverter
     implementation dataDependencies.retrofitAdapter
 
+    implementation(appDependencies.deepLink) {
+        exclude group: 'com.google.code.findbugs'
+    }
+    kapt appDependencies.deepLinkProcessor
+
     testImplementation appTestDependencies.kotlinJUnit
 
     kapt appDependencies.daggerCompiler

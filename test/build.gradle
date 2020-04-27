@@ -17,28 +17,28 @@ android {
 }
 
 dependencies {
-    def remoteDependencies = rootProject.ext.remoteDependencies
-    def remoteTestDependencies = rootProject.ext.remoteTestDependencies
+    def testDependencies = rootProject.ext.testDependencies
+    def testTestDependencies = rootProject.ext.testTestDependencies
 
-    implementation remoteDependencies.javaxAnnotation
+    implementation testDependencies.javaxAnnotation
 
-    implementation remoteDependencies.kotlin
-    implementation remoteDependencies.javaxInject
-    implementation remoteDependencies.rxKotlin
-    implementation remoteDependencies.gson
-    implementation remoteDependencies.okHttp
-    implementation remoteDependencies.okHttpLogger
-    implementation remoteDependencies.retrofit
-    implementation remoteDependencies.retrofitConverter
-    implementation remoteDependencies.retrofitAdapter
+    implementation testDependencies.kotlin
+    implementation testDependencies.javaxInject
+    implementation testDependencies.rxKotlin
+    implementation testDependencies.gson
+    implementation testDependencies.okHttp
+    implementation testDependencies.okHttpLogger
+    implementation testDependencies.retrofit
+    implementation testDependencies.retrofitConverter
+    implementation testDependencies.retrofitAdapter
 
     //Rx Java
-    implementation remoteDependencies.rxJava2
+    implementation testDependencies.rxJava2
 
-    testImplementation remoteTestDependencies.junit
-    testImplementation remoteTestDependencies.kotlinJUnit
-    testImplementation remoteTestDependencies.mockito
-    testImplementation remoteTestDependencies.assertj
+    testImplementation testTestDependencies.junit
+    testImplementation testTestDependencies.kotlinJUnit
+    testImplementation testTestDependencies.mockito
+    testImplementation testTestDependencies.assertj
 
     implementation project(path: ':data')
 }

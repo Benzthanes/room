@@ -25,12 +25,12 @@ class NetworkModule {
     @Provides
     @Singleton
     fun provideOkHttpClient(): OkHttpClient {
-        val mOkHttpBuilder = OkHttpClient.Builder()
-        mOkHttpBuilder.writeTimeout(TIMEOUT.toLong(), TimeUnit.SECONDS)
-        mOkHttpBuilder.readTimeout(TIMEOUT.toLong(), TimeUnit.SECONDS)
-        mOkHttpBuilder.connectTimeout(TIMEOUT.toLong(), TimeUnit.SECONDS)
-        mOkHttpBuilder.addInterceptor { chain -> chain.proceed(chain.request()) }
-        return mOkHttpBuilder.build()
+        return OkHttpClient.Builder()
+                .writeTimeout(TIMEOUT.toLong(), TimeUnit.SECONDS)
+                .readTimeout(TIMEOUT.toLong(), TimeUnit.SECONDS)
+                .connectTimeout(TIMEOUT.toLong(), TimeUnit.SECONDS)
+                .addInterceptor { it.proceed(it.request()) }
+                .build()
     }
 
     @Provides

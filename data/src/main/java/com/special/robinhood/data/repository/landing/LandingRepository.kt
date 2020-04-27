@@ -1,4 +1,4 @@
-package com.special.robinhood.data
+package com.special.robinhood.data.repository.landing
 
 import com.special.robinhood.data.mapper.LandingMapper
 import com.special.robinhood.data.network.api.landing.LandingApi

@@ -1,6 +1,6 @@
 package com.special.robinhood.data.di
 
-import com.special.robinhood.data.LandingRepository
+import com.special.robinhood.data.repository.landing.LandingRepository
 import com.special.robinhood.data.mapper.LandingMapper
 import com.special.robinhood.data.network.api.landing.LandingApi
 import com.special.robinhood.domain.repository.LandingRepositoryContractor

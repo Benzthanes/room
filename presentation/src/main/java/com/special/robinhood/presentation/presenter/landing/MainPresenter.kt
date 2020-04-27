@@ -13,10 +13,10 @@ class MainPresenter
     override fun onStart() {
         controller.callGetPhone(
                 {
-                    mView?.displayText("Call phone list success::")
+                    doInView { view -> view.displayText("Call phone list success::") }
                 },
                 {
-                    mView?.displayText("Exception::")
+                    doInView { view -> view.displayText("Exception::") }
                 }
         )
     }

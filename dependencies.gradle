@@ -15,7 +15,7 @@ ext {
     okHttpVersion = '3.8.1'
     androidAnnotationsVersion = '21.0.3'
     retrofitVersion = '2.3.0'
-    roomVersion = '1.0.0-alpha6'
+    roomVersion = '2.0.0'
     supportLibraryVersion = '26.0.1'
     timberVersion = '4.5.1'
     glideVersion = '4.0.0'
@@ -64,9 +64,9 @@ ext {
             glassfishAnnotation: "org.glassfish:javax.annotation:${glassfishAnnotationVersion}",
             rxJava2            : "io.reactivex.rxjava2:rxjava:${rxJava2Version}",
             rxJava2Android     : "io.reactivex.rxjava2:rxandroid:${rxJava2AndroidVersion}",
-            gson              : "com.google.code.gson:gson:${gsonVersion}",
-            okHttpLogger      : "com.squareup.okhttp3:logging-interceptor:${okHttpVersion}",
-            retrofit          : "com.squareup.retrofit2:retrofit:${retrofitVersion}",
+            gson               : "com.google.code.gson:gson:${gsonVersion}",
+            okHttpLogger       : "com.squareup.okhttp3:logging-interceptor:${okHttpVersion}",
+            retrofit           : "com.squareup.retrofit2:retrofit:${retrofitVersion}",
             localization       : "com.akexorcist:localization:${localization}",
             deepLink           : "com.airbnb:deeplinkdispatch:${deepLinkVersion}",
             deepLinkProcessor  : "com.airbnb:deeplinkdispatch-processor:${deepLinkVersion}",
@@ -98,6 +98,7 @@ ext {
             rxJava2Android : "io.reactivex.rxjava2:rxandroid:${rxJava2AndroidVersion}",
             daggerCompiler : "com.google.dagger:dagger-compiler:${daggerVersion}",
             dagger         : "com.google.dagger:dagger:${daggerVersion}",
+            timber         : "com.jakewharton.timber:timber:${timberVersion}",
     ]
 
     domainTestDependencies = [
@@ -109,6 +110,7 @@ ext {
     ]
 
     presentationDependencies = [
+            timber            : "com.jakewharton.timber:timber:${timberVersion}",
             daggerCompiler    : "com.google.dagger:dagger-compiler:${daggerVersion}",
             dagger            : "com.google.dagger:dagger:${daggerVersion}",
             okHttp            : "com.squareup.okhttp3:okhttp:${okHttpVersion}",
@@ -154,6 +156,7 @@ ext {
             retrofitAdapter   : "com.squareup.retrofit2:adapter-rxjava2:${retrofitVersion}",
             rxJava2           : "io.reactivex.rxjava2:rxjava:${rxJava2Version}",
             rxJava2Android    : "io.reactivex.rxjava2:rxandroid:${rxJava2AndroidVersion}",
+            timber            : "com.jakewharton.timber:timber:${timberVersion}",
     ]
 
     dataTestDependencies = [

@@ -24,14 +24,17 @@ configurations.all {
 }
 
 dependencies {
-    def presentationDependencies = rootProject.ext.cacheDependencies
-    def presentationTestDependencies = rootProject.ext.cacheTestDependencies
+    def presentationDependencies = rootProject.ext.presentationDependencies
+    def presentationTestDependencies = rootProject.ext.presentationTestDependencies
 
     api presentationDependencies.javaxAnnotation
 
     implementation presentationDependencies.kotlin
     implementation presentationDependencies.javaxInject
     implementation presentationDependencies.rxKotlin
+
+    //Timber
+    implementation presentationDependencies.timber
 
     //Rx Java
     implementation presentationDependencies.rxJava2

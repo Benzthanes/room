@@ -38,6 +38,9 @@ dependencies {
     testImplementation domainTestDependencies.mockito
     testImplementation domainTestDependencies.assertj
 
+    //Timber
+    implementation domainDependencies.timber
+
     //Rx Java2
     implementation domainDependencies.rxJava2
 

@@ -1,6 +1,6 @@
 package com.special.robinhood.data.di
 
-import com.special.robinhood.data.network.LandingService
+import com.special.robinhood.data.network.service.LandingService
 import dagger.Module
 import dagger.Provides
 import retrofit2.Retrofit

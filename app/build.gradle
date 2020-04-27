@@ -86,9 +86,9 @@ dependencies {
     implementation appDependencies.dagger
     implementation appDependencies.daggerSupport
     implementation appDependencies.localization
-    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation appDependencies.constraintLayout
 
-    // http
+    //Http
     implementation dataDependencies.okHttp
     implementation dataDependencies.okHttpLogger
     implementation dataDependencies.gson

@@ -8,11 +8,7 @@ import io.reactivex.SingleObserver
 import io.reactivex.disposables.CompositeDisposable
 
 object ThreadExecutors {
-    @Deprecated(message = "Use IO or computation instead")
-    const val SUBSCRIBER_ON = "subscriberOn"
-
     const val SUBSCRIBER_ON_IO = "subscriberOnIO"
-    const val SUBSCRIBER_ON_COMPUTATION = "subscriberOnComputation"
     const val OBSERVER_ON = "observerOn"
 }
 

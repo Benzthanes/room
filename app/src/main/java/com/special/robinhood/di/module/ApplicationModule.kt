@@ -36,6 +36,8 @@ import javax.inject.Singleton
 @Module
 open class ApplicationModule {
 
+    private val TIMEOUT = 30
+
     @Provides
     fun provideContext(application: Application): Context {
         return application
@@ -46,10 +48,83 @@ open class ApplicationModule {
         return PreferencesHelper(context)
     }
 
+    // ThreadExecutor provide
     @Provides
-    internal fun provideBufferooRepository(factory: BufferooDataStoreFactory,
-                                           mapper: BufferooMapper): BufferooRepository {
-        return BufferooDataRepository(factory, mapper)
+    @Singleton
+    @Named(SUBSCRIBER_ON)
+    open fun provideSubscriberOnThreadExecutor(): ThreadExecutor {
+        return ThreadExecutor(Schedulers.newThread())
+    }
+
+    @Provides
+    @Singleton
+    @Named(SUBSCRIBER_ON_IO)
+    open fun provideSubscriberOnIOThreadExecutor(): ThreadExecutor {
+        return ThreadExecutor(Schedulers.io())
+    }
+
+    @Provides
+    @Singleton
+    @Named(SUBSCRIBER_ON_COMPUTATION)
+    open fun provideSubscriberOnComputationThreadExecutor(): ThreadExecutor {
+        return ThreadExecutor(Schedulers.computation())
+    }
+
+    @Provides
+    @Singleton
+    @Named(OBSERVER_ON)
+    open fun provideObserverOnExecutionThread(): ThreadExecutor {
+        return ThreadExecutor(AndroidSchedulers.mainThread())
+    }
+
+    @Provides
+    @Singleton
+    fun provideGson(): Gson {
+        return GsonBuilder().create()
+    }
+
+    @Provides
+    @Singleton
+    fun provideOkHttpClient(): OkHttpClient {
+        val mOkHttpBuilder = OkHttpClient.Builder()
+        mOkHttpBuilder.writeTimeout(TIMEOUT.toLong(), TimeUnit.SECONDS)
+        mOkHttpBuilder.readTimeout(TIMEOUT.toLong(), TimeUnit.SECONDS)
+        mOkHttpBuilder.connectTimeout(TIMEOUT.toLong(), TimeUnit.SECONDS)
+        mOkHttpBuilder.addInterceptor { chain -> chain.proceed(chain.request()) }
+        return mOkHttpBuilder.build()
+    }
+
+    @Provides
+    @Singleton
+    internal fun provideRetrofit(gson: Gson, okHttpClient: OkHttpClient): Retrofit {
+        return Retrofit.Builder()
+                .addConverterFactory(GsonConverterFactory.create(gson))
+                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+                .client(okHttpClient)
+                .baseUrl("https://scb-test-mobile.herokuapp.com/")
+                .build()
+    }
+
+    @Provides
+    @Singleton
+    internal fun provideApiInterface(retrofit: Retrofit): LandingApi {
+        return retrofit.create(LandingApi::class.java)
+    }
+//
+//    @Provides
+//    @Singleton
+//    internal fun provideGetPhoneListUseCase(
+//            @Named(SUBSCRIBER_ON_IO) subscriberOn: ThreadExecutor,
+//            @Named(OBSERVER_ON) observerOn: ThreadExecutor,
+//            repository: LandingRepository): MainUseCase {
+//        return MainUseCase(subscriberOn, observerOn, repository)
+//    }
+
+
+    @Provides
+    internal fun provideLandingRepository(service: LandingApi,
+                                          mapper: LandingMapper): LandingRepositoryContractor {
+        return LandingRepository(service, mapper)
     }
 
     @Provides
@@ -60,13 +135,9 @@ open class ApplicationModule {
         return BufferooCacheImpl(factory, entityMapper, mapper, helper)
     }
 
-    @Provides
-    internal fun provideThreadExecutor(jobExecutor: JobExecutor): ThreadExecutor {
-        return jobExecutor
-    }
-
-    @Provides
-    internal fun providePostExecutionThread(uiThread: UiThread): PostExecutionThread {
-        return uiThread
-    }
+//
+//    @Provides
+//    internal fun providePostExecutionThread(uiThread: UiThread): PostExecutionThread {
+//        return uiThread
+//    }
 }

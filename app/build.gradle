@@ -89,14 +89,11 @@ dependencies {
     implementation appDependencies.constraintLayout
 
     //Http
-    implementation dataDependencies.okHttp
-    implementation dataDependencies.okHttpLogger
-    implementation dataDependencies.gson
+    implementation appDependencies.okHttpLogger
+    implementation appDependencies.gson
 
     //Retrofit2
-    implementation dataDependencies.retrofit
-    implementation dataDependencies.retrofitConverter
-    implementation dataDependencies.retrofitAdapter
+    implementation appDependencies.retrofit
 
     implementation(appDependencies.deepLink) {
         exclude group: 'com.google.code.findbugs'

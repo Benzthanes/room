@@ -61,54 +61,55 @@ configurations.all {
 }
 
 dependencies {
-    def mobileUiDependencies = rootProject.ext.mobileUiDependencies
-    def mobileUiTestDependencies = rootProject.ext.mobileUiTestDependencies
+    def appDependencies = rootProject.ext.appDependencies
+    def appTestDependencies = rootProject.ext.appTestDependencies
 
-    implementation project(':presentation')
-    implementation project(':data')
-    implementation project(':cache')
-    implementation project(':remote')
+    implementation project(path: ':presentation')
+    implementation project(path: ':domain')
+    implementation project(path: ':data')
+    implementation project(path: ':cache')
 
-    implementation mobileUiDependencies.javaxAnnotation
+    implementation appDependencies.javaxAnnotation
 
-    implementation mobileUiDependencies.kotlin
-    implementation mobileUiDependencies.javaxInject
-    implementation mobileUiDependencies.rxKotlin
-    implementation mobileUiDependencies.androidAnnotations
-    implementation mobileUiDependencies.androidSupportV4
-    implementation mobileUiDependencies.androidSupportV13
-    implementation mobileUiDependencies.appCompatV7
-    implementation mobileUiDependencies.supportRecyclerView
-    implementation mobileUiDependencies.supportDesign
-    implementation mobileUiDependencies.timber
-    implementation mobileUiDependencies.rxAndroid
-    implementation mobileUiDependencies.glide
-    implementation mobileUiDependencies.dagger
-    implementation mobileUiDependencies.daggerSupport
+    implementation appDependencies.kotlin
+    implementation appDependencies.javaxInject
+    implementation appDependencies.rxKotlin
+    implementation appDependencies.androidAnnotations
+    implementation appDependencies.androidSupportV4
+    implementation appDependencies.androidSupportV13
+    implementation appDependencies.appCompatV7
+    implementation appDependencies.supportRecyclerView
+    implementation appDependencies.supportDesign
+    implementation appDependencies.timber
+    implementation appDependencies.rxAndroid
+    implementation appDependencies.glide
+    implementation appDependencies.dagger
+    implementation appDependencies.daggerSupport
+    implementation appDependencies.localization
 
-    testImplementation mobileUiTestDependencies.kotlinJUnit
+    testImplementation appTestDependencies.kotlinJUnit
 
-    kapt mobileUiDependencies.daggerCompiler
-    kapt mobileUiDependencies.daggerProcessor
-    compileOnly mobileUiDependencies.glassfishAnnotation
+    kapt appDependencies.daggerCompiler
+    kapt appDependencies.daggerProcessor
+    compileOnly appDependencies.glassfishAnnotation
 
     // Instrumentation test dependencies
-    androidTestImplementation mobileUiTestDependencies.junit
-    androidTestImplementation mobileUiTestDependencies.mockito
-    androidTestImplementation mobileUiTestDependencies.mockitoAndroid
-    androidTestImplementation (mobileUiTestDependencies.espressoCore) {
+    androidTestImplementation appTestDependencies.junit
+    androidTestImplementation appTestDependencies.mockito
+    androidTestImplementation appTestDependencies.mockitoAndroid
+    androidTestImplementation(appTestDependencies.espressoCore) {
         exclude group: 'com.android.support', module: 'support-annotations'
     }
-    androidTestImplementation (mobileUiTestDependencies.androidRunner) {
+    androidTestImplementation(appTestDependencies.androidRunner) {
         exclude group: 'com.android.support', module: 'support-annotations'
     }
-    androidTestImplementation (mobileUiTestDependencies.androidRules) {
+    androidTestImplementation(appTestDependencies.androidRules) {
         exclude group: 'com.android.support', module: 'support-annotations'
     }
-    androidTestImplementation (mobileUiTestDependencies.espressoIntents) {
+    androidTestImplementation(appTestDependencies.espressoIntents) {
         exclude group: 'com.android.support', module: 'support-annotations'
     }
-    androidTestImplementation(mobileUiTestDependencies.espressoContrib) {
+    androidTestImplementation(appTestDependencies.espressoContrib) {
         exclude module: 'appcompat'
         exclude module: 'appcompat-v7'
         exclude module: 'support-v4'
@@ -118,6 +119,6 @@ dependencies {
         exclude module: 'design'
     }
 
-    kaptTest mobileUiDependencies.daggerCompiler
-    kaptAndroidTest mobileUiDependencies.daggerCompiler
+    kaptTest appDependencies.daggerCompiler
+    kaptAndroidTest appDependencies.daggerCompiler
 }

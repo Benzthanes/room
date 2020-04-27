@@ -1,13 +1,10 @@
 package com.special.robinhood.presentation
 
-/**
- * Interface class to act as a base for any class that is to take the role of the IPresenter in the
- * Model-BaseView-IPresenter pattern.
- */
-interface BasePresenter {
+abstract class BasePresenter<T : BaseView> {
+    private var mView: T? = null
 
-    fun start()
-
-    fun stop()
+    fun setView(view: T) {
+        this.mView = view
+    }
 
 }

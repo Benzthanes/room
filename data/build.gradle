@@ -1,22 +1,39 @@
-apply plugin: 'kotlin'
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
+
+android {
+    def globalConfiguration = rootProject.extensions.getByName("ext")
+    compileSdkVersion globalConfiguration["androidCompileSdkVersion"]
+
+    defaultConfig {
+        minSdkVersion globalConfiguration["androidMinSdkVersion"]
+        targetSdkVersion globalConfiguration["androidTargetSdkVersion"]
+        multiDexEnabled true
+    }
+}
 
 dependencies {
     def dataDependencies = rootProject.ext.dataDependencies
     def dataTestDependencies = rootProject.ext.dataTestDependencies
 
-    compile project(':domain')
+    implementation project(path: ':domain')
 
-    compile dataDependencies.javaxAnnotation
+    api dataDependencies.javaxAnnotation
 
     implementation dataDependencies.kotlin
     implementation dataDependencies.javaxInject
     implementation dataDependencies.rxKotlin
 
-    //rxjava
+    //Rx Java2
     implementation dataDependencies.rxJava2
+
+    //Dagger2
+    compileOnly dataDependencies.dagger
+    kapt dataDependencies.daggerCompiler
 
     testImplementation dataTestDependencies.junit
     testImplementation dataTestDependencies.kotlinJUnit

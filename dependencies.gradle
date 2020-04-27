@@ -24,6 +24,7 @@ ext {
     rxJava2AndroidVersion = '2.1.1'
     rxJava2Version = '2.2.13'
     localization = '1.2.5'
+    deepLinkVersion = '4.1.0'
 
     //Testing
     robolectricVersion = '3.4.2'
@@ -62,6 +63,8 @@ ext {
             rxJava2            : "io.reactivex.rxjava2:rxjava:${rxJava2Version}",
             rxJava2Android     : "io.reactivex.rxjava2:rxandroid:${rxJava2AndroidVersion}",
             localization       : "com.akexorcist:localization:${localization}",
+            deepLink           : "com.airbnb:deeplinkdispatch:${deepLinkVersion}",
+            deepLinkProcessor  : "com.airbnb:deeplinkdispatch-processor:${deepLinkVersion}",
     ]
 
     appTestDependencies = [

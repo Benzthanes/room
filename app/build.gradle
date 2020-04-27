@@ -86,6 +86,10 @@ dependencies {
     implementation appDependencies.dagger
     implementation appDependencies.daggerSupport
     implementation appDependencies.localization
+    implementation(appDependencies.deepLink) {
+        exclude group: 'com.google.code.findbugs'
+    }
+    kapt appDependencies.deepLinkProcessor
 
     testImplementation appTestDependencies.kotlinJUnit
 

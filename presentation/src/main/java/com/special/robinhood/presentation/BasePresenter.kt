@@ -1,15 +1,23 @@
 package com.special.robinhood.presentation
 
-abstract class BasePresenter<T : BaseView> {
-    private var mView: T? = null
+open class BasePresenter<T : BaseView> {
+    private var view: T? = null
 
     fun setView(view: T) {
-        this.mView = view
+        this.view = view
     }
 
-    fun doInView(view: (T) -> Unit) {
-        mView?.let {
-            view.invoke(it)
+    fun doInView(block: (T) -> Unit) {
+        view?.let {
+            block.invoke(it)
+        }
+    }
+
+    fun doInView(condition: Boolean, block: (T) -> Unit) {
+        if (condition) {
+            view?.let {
+                block.invoke(it)
+            }
         }
     }
 }

@@ -1,4 +1,4 @@
-package com.special.robinhood.domain.model
+package com.special.robinhood.domain.model.landing
 
 data class Mobile(
         var brand: String? = null,

@@ -1,7 +1,7 @@
 package com.special.robinhood.data.mapper
 
 import com.special.robinhood.data.model.MobileEntity
-import com.special.robinhood.domain.model.Mobile
+import com.special.robinhood.domain.model.landing.Mobile
 import javax.inject.Inject
 
 class LandingMapper @Inject constructor() {

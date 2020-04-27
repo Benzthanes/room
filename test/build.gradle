@@ -40,5 +40,5 @@ dependencies {
     testImplementation testTestDependencies.mockito
     testImplementation testTestDependencies.assertj
 
-    implementation project(path: ':data')
+//    implementation project(path: ':data')
 }

@@ -35,7 +35,7 @@ dependencies {
     compileOnly dataDependencies.dagger
     kapt dataDependencies.daggerCompiler
 
-    // http
+    //Http
     implementation dataDependencies.okHttp
     implementation dataDependencies.okHttpLogger
     implementation dataDependencies.gson

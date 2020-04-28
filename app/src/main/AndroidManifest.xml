@@ -24,6 +24,10 @@
             android:name=".view.activity.landing.MainActivity"
             android:screenOrientation="portrait" />
 
+        <activity
+            android:name=".view.activity.ordertracking.OrderTrackingActivity"
+            android:screenOrientation="portrait" />
+
     </application>
 
 </manifest>

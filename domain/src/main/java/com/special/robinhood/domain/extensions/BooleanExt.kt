@@ -1,4 +1,4 @@
-package com.special.robinhood.extensions
+package com.special.robinhood.domain.extensions
 
 class BooleanExt {
 

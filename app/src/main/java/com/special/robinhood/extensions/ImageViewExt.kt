@@ -13,16 +13,13 @@ fun ImageView.loadImageFormUrl(url: String?) {
 fun ImageView.loadImageFormUrl(url: String?, placeHolder: Int?) {
     Glide.with(this.context)
             .load(url.orEmpty())
-            .apply(RequestOptions()
-                    .placeholder(placeHolder ?: 0))
+            .apply(RequestOptions().placeholder(placeHolder ?: 0))
             .into(this)
 }
 
 fun ImageView.loadImageFormUrl(url: String?, placeHolder: Int?, error: Int?) {
     Glide.with(this.context)
             .load(url.orEmpty())
-            .apply(RequestOptions()
-                    .error(error ?: 0)
-                    .placeholder(placeHolder ?: 0))
+            .apply(RequestOptions().error(error ?: 0).placeholder(placeHolder ?: 0))
             .into(this)
 }

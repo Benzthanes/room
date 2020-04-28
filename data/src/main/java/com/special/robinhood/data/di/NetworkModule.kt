@@ -66,7 +66,7 @@ class NetworkModule {
 
     @Provides
     @Singleton
-    fun provideAppHeaderInterceptor(
+    internal fun provideAppHeaderInterceptor(
             preferencesHelper: SharedPreferencesHelper,
             sessionCache: SessionCache
     ): Interceptor {

@@ -2,6 +2,8 @@ package com.special.robinhood.data.di
 
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
+import com.special.robinhood.data.cache.SessionCache
+
 import com.special.robinhood.data.db.SharedPreferencesHelper
 import dagger.Module
 import dagger.Provides
@@ -64,7 +66,10 @@ class NetworkModule {
 
     @Provides
     @Singleton
-    fun provideAppHeaderInterceptor(preferencesHelper: SharedPreferencesHelper): Interceptor {
+    fun provideAppHeaderInterceptor(
+            preferencesHelper: SharedPreferencesHelper,
+            sessionCache: SessionCache
+    ): Interceptor {
         return Interceptor {
             it.proceed(it.request()
                     .newBuilder()

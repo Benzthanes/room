@@ -27,5 +27,4 @@ class SharedPreferencesHelper
         set(appLanguage) = robinHoodPref.edit()
                 .putString(SharedPreferencesConstants.APP_LANGUAGE, appLanguage)
                 .apply()
-
 }

@@ -1,6 +1,6 @@
 package com.special.robinhood.di.module
 
-import com.special.robinhood.view.fragment.landing.BlankFragment
+import com.special.robinhood.view.fragment.landing.MainFragment
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 
@@ -8,5 +8,5 @@ import dagger.android.ContributesAndroidInjector
 abstract class FragmentBuilder {
 
     @ContributesAndroidInjector
-    abstract fun bindBlankFragment(): BlankFragment
+    abstract fun bindBlankFragment(): MainFragment
 }

@@ -13,3 +13,7 @@ fun View.invisible() {
 fun View.visible() {
     this.visibility = View.VISIBLE
 }
+
+
+
+

@@ -2,8 +2,11 @@ package com.special.robinhood.data.di
 
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
+import com.special.robinhood.data.cache.SessionCache
+import com.special.robinhood.data.db.SharedPreferencesHelper
 import dagger.Module
 import dagger.Provides
+import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -33,24 +36,46 @@ class NetworkModule {
 
     @Provides
     @Singleton
-    fun provideOkHttpClient(logging: HttpLoggingInterceptor): OkHttpClient {
+    fun provideOkHttpClient(
+            interceptor: Interceptor,
+            logging: HttpLoggingInterceptor
+    ): OkHttpClient {
         return OkHttpClient.Builder()
                 .writeTimeout(TIMEOUT.toLong(), TimeUnit.SECONDS)
                 .readTimeout(TIMEOUT.toLong(), TimeUnit.SECONDS)
                 .connectTimeout(TIMEOUT.toLong(), TimeUnit.SECONDS)
-                .addInterceptor { it.proceed(it.request()) }
+                .addInterceptor(interceptor)
                 .addInterceptor(logging)
                 .build()
     }
 
     @Provides
     @Singleton
-    internal fun provideRetrofit(gson: Gson, okHttpClient: OkHttpClient): Retrofit {
+    internal fun provideRetrofit(
+            gson: Gson,
+            okHttpClient: OkHttpClient
+    ): Retrofit {
         return Retrofit.Builder()
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .client(okHttpClient)
                 .baseUrl("https://scb-test-mobile.herokuapp.com/")
                 .build()
+    }
+
+    @Provides
+    @Singleton
+    fun provideAppHeaderInterceptor(
+            preferencesHelper: SharedPreferencesHelper,
+            sessionCache: SessionCache
+    ): Interceptor {
+        return Interceptor {
+            it.proceed(it.request()
+                    .newBuilder()
+//                    .addHeader("Content-Type", "application/json")
+                    .addHeader("Accept-Language", preferencesHelper.appLanguage)
+//                    .method(original.method(), original.body())
+                    .build())
+        }
     }
 }

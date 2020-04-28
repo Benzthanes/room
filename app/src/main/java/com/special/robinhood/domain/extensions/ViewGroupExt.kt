@@ -1,4 +1,4 @@
-package com.special.robinhood.extensions
+package com.special.robinhood.domain.extensions
 
 import android.view.LayoutInflater
 import android.view.View

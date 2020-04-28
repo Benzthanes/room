@@ -99,6 +99,9 @@ dependencies {
     //Retrofit2
     implementation appDependencies.retrofit
 
+    //Lottie Animation
+    implementation appDependencies.lottie
+
     implementation(appDependencies.deepLink) {
         exclude group: 'com.google.code.findbugs'
     }

@@ -8,4 +8,9 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <declare-styleable name="CustomView">
+        <attr name="titleColor" format="color" />
+        <attr name="detailColor" format="color" />
+    </declare-styleable>
+
 </resources>

@@ -48,6 +48,10 @@ android {
         ignoreWarnings true
     }
 
+    viewBinding {
+        enabled = true
+    }
+
 }
 
 kapt {

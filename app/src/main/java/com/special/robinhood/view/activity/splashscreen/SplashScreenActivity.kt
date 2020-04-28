@@ -16,8 +16,8 @@ class SplashScreenActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         presenter.start()
-//        startActivity(Intent(this, MainActivity::class.java))
-        startActivity(Intent(this, OrderTrackingActivity::class.java))
+        startActivity(Intent(this, MainActivity::class.java))
+//        startActivity(Intent(this, OrderTrackingActivity::class.java))
     }
 
 }

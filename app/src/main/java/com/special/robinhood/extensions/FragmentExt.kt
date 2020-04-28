@@ -9,9 +9,9 @@ inline fun FragmentManager.inTransaction(func: FragmentTransaction.() -> Fragmen
 }
 
 fun Fragment.addFragment(fragment: Fragment, frameId: Int) {
-    childFragmentManager.inTransaction { add(frameId, fragment) }
+    this.childFragmentManager.inTransaction { add(frameId, fragment) }
 }
 
 fun Fragment.replaceFragment(fragment: Fragment, frameId: Int) {
-    childFragmentManager.inTransaction { replace(frameId, fragment) }
+    this.childFragmentManager.inTransaction { replace(frameId, fragment) }
 }

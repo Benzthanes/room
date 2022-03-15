@@ -52,4 +52,8 @@ dependencies {
     testImplementation dataTestDependencies.kotlinJUnit
     testImplementation dataTestDependencies.mockito
     testImplementation dataTestDependencies.assertj
+
+    api "androidx.room:room-runtime:2.4.2"
+    kapt "androidx.room:room-compiler:2.4.2"
+    implementation "androidx.room:room-rxjava2:2.4.2"
 }

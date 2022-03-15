@@ -1,1 +1,1 @@
-include ':cache', ':test', ':data', ':domain', ':presentation', ':app'
+include ':data', ':domain', ':presentation', ':app', ':viewmodel'

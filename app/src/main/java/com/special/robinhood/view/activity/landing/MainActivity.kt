@@ -22,7 +22,7 @@ class MainActivity : BaseActivity(), MainContractor.View {
         setContentView(binding.root)
         presenter.setView(this)
         presenter.onStart()
-        addFragment(MainFragment.newInstance("data1", "data2"), binding.frameLayout.id)
+//        addFragment(MainFragment.newInstance("data1", "data2"), binding.frameLayout.id)
 
     }
 

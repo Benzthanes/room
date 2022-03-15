@@ -5,12 +5,12 @@ import com.special.robinhood.AndroidApplication
 import com.special.robinhood.data.di.DataModule
 import com.special.robinhood.data.di.NetworkModule
 import com.special.robinhood.data.di.RepositoryModule
+import com.special.robinhood.data.di.RoomModule
 import com.special.robinhood.data.di.ServiceModule
 import com.special.robinhood.data.di.SharedPreferencesModule
 import com.special.robinhood.di.module.ActivityBuilder
 import com.special.robinhood.di.module.AndroidModule
 import com.special.robinhood.di.module.ApplicationModule
-import com.special.robinhood.di.module.DeepLinkModule
 import com.special.robinhood.di.module.FragmentBuilder
 import com.special.robinhood.domain.di.DomainModule
 import com.special.robinhood.domain.di.UseCaseModule
@@ -32,9 +32,9 @@ import javax.inject.Singleton
     ServiceModule::class,
     NetworkModule::class,
     UseCaseModule::class,
-    DeepLinkModule::class,
     SharedPreferencesModule::class,
-    AndroidSupportInjectionModule::class
+    AndroidSupportInjectionModule::class,
+    RoomModule::class
 ])
 
 @Singleton

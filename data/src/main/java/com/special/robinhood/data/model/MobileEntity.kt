@@ -8,6 +8,6 @@ data class MobileEntity(
         @SerializedName("price") var price: String? = null,
         @SerializedName("name") var name: String? = null,
         @SerializedName("rating") var rating: String? = null,
-        @SerializedName("id") var id: String? = null,
+        @SerializedName("id") var id: Int? = null,
         @SerializedName("description") var description: String? = null
 )

@@ -6,6 +6,6 @@ data class Mobile(
         var price: String? = null,
         var name: String? = null,
         var rating: String? = null,
-        var id: String? = null,
+        var id: Int? = null,
         var description: String? = null
 )

@@ -13,11 +13,11 @@ class MainPresenter
 
     override fun onStart() {
         controller.callGetPhoneCache({
-            if (it.isNullOrEmpty()) {
+//            if (it.isNullOrEmpty()) {
                 getPhoneFromApi()
-            } else {
-                doInView { view -> view.displayText("get phone list cache success::") }
-            }
+//            } else {
+//                doInView { view -> view.displayText("get phone list cache success::") }
+//            }
         }, {
             doInView { view -> view.displayText("get phone list cache fail::") }
             getPhoneFromApi()

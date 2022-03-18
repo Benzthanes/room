@@ -13,5 +13,6 @@ data class MobileCacheEntity(
     @ColumnInfo(name = "price") var price: String? = null,
     @ColumnInfo(name = "name") var name: String? = null,
     @ColumnInfo(name = "rating") var rating: String? = null,
-    @ColumnInfo(name = "description") var description: String? = null
+    @ColumnInfo(name = "description") var description: String? = null,
+    @ColumnInfo(name = "test") var test: String? = null
 )
